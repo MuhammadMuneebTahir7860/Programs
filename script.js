@@ -91,12 +91,32 @@ function sumOfMultiples(){
 
 function calculateNumberOfElements(){
     var arrayInput=document.getElementById("arrayInput").value;
+    var count={};
     var arr=new Array(arrayInput);
     var second=prompt("Enter Second Element of Array");
     arr[1]=second;
     var third=prompt("Enter Third Element of Array");
     arr[2]=third;
-    for(i=0; i<=arr.length; i++){
-        
+    var fourth=prompt("Enter Fourth Element of Array");
+    arr[3]=fourth;
+    var fifth=prompt("Enter Fifth Element of Array");
+    arr[4]=fifth;
+    for(i=0; i<arr.length; i++){
+        var num=arr[i];
+        count[num]=count[num] ? count[num] +1 :1;
     }
+    var myJSON = JSON.stringify(count);
+    document.getElementById("numberOfElements").innerHTML=myJSON;
+}
+
+function countChars(){
+    var searchChar=document.getElementById("searchChar").value;
+    var string=document.getElementById("string").value;
+    var num=0;
+    for(i=0; i<=string.length; i++){
+        if(string[i]==searchChar){
+            num++;
+        }
+    }
+    document.getElementById("searchOutput").innerHTML=num;
 }
